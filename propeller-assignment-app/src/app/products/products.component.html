@@ -1,11 +1,5 @@
-<p>products works!</p>
-<div *ngIf="products.length > 0">
-    <ul>
-        <li *ngFor="let product of products">
-            {{ product.name }} <br>
-            {{ product.id }} <br>
-            {{ product.createdAt }} <br> 
-            {{ product.description }} 
-        </li>
-    </ul>
+<div class="container-fluid">
+    <app-products-listing>
+
+    </app-products-listing>
 </div>

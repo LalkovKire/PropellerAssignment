@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Apollo, gql } from 'apollo-angular';
 import { Product } from './models/product';
+import { ProductService } from './product.service';
 
 @Component({
   selector: 'app-products',
@@ -9,27 +9,11 @@ import { Product } from './models/product';
 })
 export class ProductsComponent implements OnInit {
 
-  public products: Product[] = [];
-
-  constructor(private apollo: Apollo){
+  constructor(private productService: ProductService){
   };
 
   ngOnInit(): void {
-     this.apollo.query({
-      query: gql`
-      query {
-        products(options: { take: 5 } ) {
-           items {
-             name   
-             description
-             createdAt
-             id
-          }
-        }
-    }`
-     }).subscribe(({ data } : any) => {
-       this.products = data.products.items.map((p: any) => new Product(p.id, p.name, p.description, new Date(p.createdAt) ));
-     })
+    
   };
   
 }

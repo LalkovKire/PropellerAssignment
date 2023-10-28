@@ -1,0 +1,16 @@
+.singleProductItem {
+    width: 310px;
+    height: 300px;
+    background-color: rgba(182, 180, 176, 0.129);
+    float: left;
+    margin: 25px ;
+    font-family: 'Poppins', sans-serif;
+    filter: drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.5));
+}
+.custom-product-image {
+    height: 65%;
+}
+.custom-product-image img {
+    border-radius: 5%;
+    cursor: pointer;
+}
