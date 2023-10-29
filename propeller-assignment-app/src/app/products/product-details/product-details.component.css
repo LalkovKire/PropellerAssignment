@@ -1,0 +1,44 @@
+.custom-details-container div {
+    margin-bottom: 25px;
+    font-family: 'Poppins', sans-serif;
+}
+span {
+    text-align: justify;
+}
+.custom-back {
+    margin-right: 25px;
+}
+.custom-btn {
+    width: 130px;
+}
+
+@media (max-width: 900px) {
+    .custom-desc {
+        width: 70% !important;
+    }
+}
+@media (max-width: 600px) {
+    .custom-desc {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 500px) {
+    img {
+        width: 300px !important;
+        height: 250px !important;
+    }
+    .custom-desc {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 350px) {
+    img {
+        width: 200px !important;
+        height: 180px !important;
+    }
+    .custom-desc {
+        width: 100% !important;
+    }
+}

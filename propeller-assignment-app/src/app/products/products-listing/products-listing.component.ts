@@ -17,9 +17,18 @@ export class ProductsListingComponent implements OnInit {
 
   ngOnInit(): void {
     this.productService.getProducts().subscribe(({ data } : any) => {
-       this.products = data.products.items.map((p: any) =>
-        new Product(p.id, p.name, p.description, new Date(p.createdAt), p.assets.map((asset: any) => {
-          return { source: asset.source };
+       this.products = data.products.items.map((product: any) =>
+        new Product(product.id, product.name, product.description,
+          new Date(product.createdAt),
+          product.assets.map((asset: any) => {
+            return { source: asset.source };
+          }), product.variants.map((variant: any) => {
+            return { 
+              name: variant.name,
+              price: variant.price,
+              stockLevel: variant.stockLevel,
+              sku: variant.sku
+            };
         })));
      })
   };

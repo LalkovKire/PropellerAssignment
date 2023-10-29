@@ -3,5 +3,7 @@
         <img *ngFor="let asset of product.assets" [src]="asset.source" width="200" height="120" />
     </div>
     <div class="d-flex justify-content-center align-items-center"><h5> {{ product.name }} </h5></div>
-    <div class="d-flex justify-content-center align-items-center"><button type="button" class="btn btn-primary">Details</button></div>
+    <div class="d-flex justify-content-center align-items-center">
+        <a type="button" class="btn btn-primary" 
+        [routerLink]="['product/details', product.id]">Details</a></div>
 </div>

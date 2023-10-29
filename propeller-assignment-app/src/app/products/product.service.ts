@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Apollo, gql } from 'apollo-angular';
+import { GET_PRODUCTS_QUERY } from './queries/getProductsQuery';
 
 @Injectable({
   providedIn: 'root'
@@ -10,20 +11,30 @@ export class ProductService {
 
   getProducts() {
      return this.apollo.query({
-      query: gql`
-      query {
-        products(options: { take: 50 } ) {
-           items {
-             name   
-             description
-             createdAt
-             id
-             assets {
-              source
-              }
-          }
-        }
-    }`
+      query: GET_PRODUCTS_QUERY
      });
   };
+
+  getProductById(id: number) {  // Can't extract this one, the parameters are needed. 
+    return this.apollo.query({
+      query: gql`
+      query {
+        product(id: ${id}) {
+          name
+          description
+          createdAt
+          id
+          assets {
+            source
+          }
+          variants {
+            name
+            price
+            stockLevel
+            sku
+          }
+      }
+    }`
+    });
+  }
 }
