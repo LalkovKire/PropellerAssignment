@@ -5,17 +5,21 @@ import { ProductsListingComponent } from './products-listing/products-listing.co
 import { ProductItemComponent } from './product-item/product-item.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { AppRoutingModule } from '../app-routing.module';
+import { FilterBoardComponent } from './filter-board/filter-board.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     ProductsComponent,
     ProductsListingComponent,
     ProductItemComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    FilterBoardComponent
   ],
   imports: [
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   exports: [
     ProductsComponent,

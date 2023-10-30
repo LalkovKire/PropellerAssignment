@@ -16,21 +16,21 @@ export class ProductsListingComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.productService.getProducts().subscribe(({ data } : any) => {
-       this.products = data.products.items.map((product: any) =>
-        new Product(product.id, product.name, product.description,
-          new Date(product.createdAt),
-          product.assets.map((asset: any) => {
-            return { source: asset.source };
-          }), product.variants.map((variant: any) => {
-            return { 
-              name: variant.name,
-              price: variant.price,
-              stockLevel: variant.stockLevel,
-              sku: variant.sku
-            };
-        })));
-     })
+    this.productService.products$.subscribe((products: Product[]) => {
+      this.products = products.map(product => new Product(
+        product.id,
+        product.name,
+        product.description,
+        new Date(product.createdAt),
+        product.assets.map(asset => ({ source: asset.source })),
+        product.variants.map(variant => ({
+          name: variant.name,
+          price: variant.price,
+          stockLevel: variant.stockLevel,
+          sku: variant.sku
+        }))
+      ));
+    });
   };
 
 }

@@ -6,3 +6,11 @@
 .custom-whitespace{
    height: 55px;
 }
+
+.custom-header ul  {
+    gap: 55px;
+}
+
+.custom-header ul li {
+    border-bottom: 1px solid rgba(41, 137, 158, 0.397);  
+}

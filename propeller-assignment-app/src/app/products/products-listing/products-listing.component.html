@@ -1,5 +1,12 @@
-<div class="products-listings">
-   <product-item *ngFor="let item of products" [product]="item">
-        
-   </product-item>
+<div class="d-block">
+   <div class="container-fluid">
+      <app-filter-board>
+          
+      </app-filter-board>
+  </div>
+   <div class="products-listings">
+      <product-item *ngFor="let item of products" [product]="item">
+         
+      </product-item>
+   </div>
 </div>

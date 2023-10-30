@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductsModule } from './products/products.module';
+import { FormsModule } from '@angular/forms';
+import { OrdersModule } from './orders/orders.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { ProductsModule } from './products/products.module';
     AppRoutingModule,
     GraphQLModule,
     HttpClientModule,
-    ProductsModule
+    ProductsModule,
+    FormsModule,
+    OrdersModule
   ],
   providers: [],
   bootstrap: [AppComponent]
