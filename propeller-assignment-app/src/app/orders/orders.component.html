@@ -1,1 +1,44 @@
-<p>orders works!</p>
+<div class="container flid">
+    <div class="custom-whitespace">
+    </div>
+    <div class="container-fluid">
+        <h1>Cart</h1>
+    </div><br><br>
+    <div *ngIf="productVariants.length > 0; else emptyCart">
+        <ol class="list-group list-group-numbered">
+            <li class="list-group-item d-flex justify-content-between align-items-start"
+              *ngFor="let variant of productVariants">
+              <div class="ms-2 me-auto">
+                <div class="fw-bold">{{ variant.name }}</div><br>
+                <span>Price:&nbsp;&nbsp;&nbsp;</span> {{ variant.price }}$<br><br>
+                <span>Code:&nbsp;&nbsp;&nbsp;</span> {{ variant.sku }}
+              </div>
+              <div class="d-flex flex-column justify-content-between" style="height: 150px;">
+                <div class="d-flex justify-content-end">
+                    <span class="badge bg-primary rounded-pill">{{ variant.stockLevel }}</span>
+                </div>
+                <div class="custom-quantity">
+                    <input placeholder="1" type="number" id="typeNumber" class="form-control" />
+                    <label class="form-label" for="typeNumber">Quantity</label>
+                </div>
+              </div>
+            </li>
+          </ol>
+          <br>
+          
+          <div class="container-fluid">
+            <h6>Total amout: {{ calcTotalAmount() }}$</h6>
+          </div>
+          <div class="container-fluid">
+            <button class="btn btn-outline-success custom-confirm">Buy</button>
+          </div>
+          <div class="custom-whitespace">
+         </div>
+    </div>
+
+    <ng-template #emptyCart>
+        <div class="container">
+            <h5>The cart is empty!</h5>
+        </div>
+    </ng-template>
+</div>

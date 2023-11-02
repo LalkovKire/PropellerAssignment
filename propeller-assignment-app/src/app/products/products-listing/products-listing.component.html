@@ -4,9 +4,28 @@
           
       </app-filter-board>
   </div>
-   <div class="products-listings">
-      <product-item *ngFor="let item of products" [product]="item">
-         
-      </product-item>
+  <div *ngIf="!filteringState; else filteredListings">
+      <div class="products-listings" *ngIf="filteredProducts.length === 0; else normalProducts">
+         <product-item *ngFor="let item of products" [product]="item">
+         </product-item>
+      </div>
+      <ng-template #normalProducts>
+         <div style="width: 100%; padding: 20px;">
+            <div>
+               <p>Search results: {{ filteredProducts.length }} </p>
+            </div>
+            <product-item *ngFor="let item of filteredProducts" [product]="item">
+            </product-item>
+         </div>
+      </ng-template>
    </div>
+   <ng-template #filteredListings >
+      <div style="width: 100%; padding: 20px;">
+         <div>
+            <p style="margin-left: 40px;">Search results: {{ filteredProducts.length }} </p>
+         </div>
+         <product-item *ngFor="let item of filteredProducts" [product]="item"> 
+         </product-item>
+      </div>
+   </ng-template>
 </div>

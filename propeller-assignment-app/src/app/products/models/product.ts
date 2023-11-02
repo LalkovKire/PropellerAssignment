@@ -17,6 +17,7 @@ export interface Asset {
 }
 
 export interface Variants {
+    id: number;
     name: string;
     price: number;
     stockLevel: string;

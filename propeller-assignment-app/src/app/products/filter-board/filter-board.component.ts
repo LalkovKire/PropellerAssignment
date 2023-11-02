@@ -8,7 +8,8 @@ import { ProductService } from '../product.service';
 })
 export class FilterBoardComponent implements OnInit {
 
-  public selectedSortingOption: string = "1";
+  public selectedSortingOption: string = "Default";
+  public searchResult: string = "";
 
   constructor(private productService: ProductService) {
 
@@ -20,6 +21,11 @@ export class FilterBoardComponent implements OnInit {
 
   public sortingFilterChange(e: any) : void {
       this.productService.updateProducts(e);
+  }
+
+  public searchFilter() : void {
+      this.productService.setFilteringState(true);
+      this.productService.getProductsBySearchFilter(this.searchResult);
   }
 
 }

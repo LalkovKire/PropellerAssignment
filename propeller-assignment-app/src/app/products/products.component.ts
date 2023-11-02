@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from './models/product';
-import { ProductService } from './product.service';
 
 @Component({
   selector: 'app-products',
@@ -9,11 +7,11 @@ import { ProductService } from './product.service';
 })
 export class ProductsComponent implements OnInit {
 
-  constructor(private productService: ProductService){
+  constructor(){
   };
 
   ngOnInit(): void {
-    
+      
   };
   
 }

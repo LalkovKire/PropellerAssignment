@@ -12,6 +12,7 @@ query {
           source
         }
         variants {
+          id
           name
           price
           stockLevel

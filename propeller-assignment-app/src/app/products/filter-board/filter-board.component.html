@@ -2,17 +2,18 @@
     <div class="custom-text"><h5>Sort by: </h5></div>
     <div>
         <select class="form-select" [(ngModel)]="selectedSortingOption" (ngModelChange)="sortingFilterChange($event)">
-            <option value="1">Default</option>
-            <option value="2">Name: ascending</option>
-            <option value="3">Name: descending</option>
-            <option value="4">Time created ascending</option>
-            <option value="5">Time created descending</option>
+            <option value="Default">Default</option>
+            <option value="NameASC">Name: ascending</option>
+            <option value="NameDESC">Name: descending</option>
+            <option value="TimeASC">Time created ascending</option>
+            <option value="TimeDESC">Time created descending</option>
         </select>
     </div>
     <div class="input-group custom-search">
-        <input type="search" class="form-control" placeholder="Search">
+        <input type="search" class="form-control" placeholder="Search" [(ngModel)]="searchResult">
     </div>
     <div>
-        <button type="button" class="btn btn-outline-primary">filter</button>
+        <button type="button" class="btn btn-outline-primary" (click)="searchFilter()">filter</button>
     </div>
+
 </div>

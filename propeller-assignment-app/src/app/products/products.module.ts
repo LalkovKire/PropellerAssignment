@@ -14,7 +14,7 @@ import { FormsModule } from '@angular/forms';
     ProductsListingComponent,
     ProductItemComponent,
     ProductDetailsComponent,
-    FilterBoardComponent
+    FilterBoardComponent,
   ],
   imports: [
     CommonModule,
